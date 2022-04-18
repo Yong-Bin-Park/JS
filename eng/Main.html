@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="./Main.js"></script> -->
+    <title>고리고리알고리</title>
+
+    <!-- 각 요소들을 구분할 수 있게 CSS를 적용 -->
+    <style>
+        div#wrap { width: 1500px; margin:0 auto; background:#ddd; }
+        header#header { background:rgb(188, 185, 230); }
+        nav#nav { background:#dfd; }    
+        section#container { background:#ddf; }
+        section#container2 {background: #a9a9a9;}
+        div.content { background:#eee; }
+        aside#aside { background:#fef; }
+        footer#footer { background:#ffe; }
+       
+        div#warp, header#header, nav#nav,
+        section#container, div.content, aside#aside,
+        footer#footer { padding: 10px; }
+     
+        nav#nav ul { margin:0; padding:0; list-style:none; }
+        nav#nav ul li { background:#eee; padding:10px; display:inline-block; }
+        /* ---------------------------- */
+        div.content { width:45%; height:45%; float:left; }
+        aside#aside { width:45%; height:45%; float:right; }
+
+        section#container::after { content:""; display:block; clear:both; }
+
+        @media screen and (max-width: 910px) {
+        div#wrap { width:calc(100% - 20px); }
+        div.content { width:calc(100% - 20px - 240px - 20px); } 
+        aside#aside { width:220px; }
+        }
+        @media screen and (max-width: 650px) {
+        div.content,
+        aside#aside { width:calc(100% - 20px); float:none; }
+        }
+
+        .hov-anim-box .animated {
+         display: none
+        }
+        .hov-anim-box:hover .animated {
+        display: inline
+        }
+        .hov-anim-box:hover .static {
+        display: none
+        }
+    </style>
+</head>
+<body bgcolor="SKYBLUE">
+    <div id="wrap">
+        <header id="header">
+            <h1>Gori Gori Algori</h1>
+            <select id="language" onchange="location.href=this.value">
+                <option value = "../kor/Main.html">한글</option>
+                <option value = "../eng/Main.html" selected>English</option>
+                <option value = "../jp/Main.html">日本語</option>
+                <option value = "../ch/Main.html">中文</option>
+            </select>
+        </header>
+
+
+        <nav id="nav">
+            <ul>
+                <!-- 버튼 외형은 css로 변경만하면 버튼 종료 -->
+                <button class="favorite styled" type="button"><a href="#" onclick="location.href='bubbleSorting.html'">Bubble Sorting</a></button>
+                <button class="favorite styled" type="button"><a href="#" onclick="location.href='selectiveSorting.html'">Selective Sorting</a></button>
+                <button class="favorite styled" type="button"><a href="#" onclick="location.href='heapSorting.html'">Heap Sorting</a></button>
+                <button class="favorite styled" type="button"><a href="#" onclick="location.href='insertionSorting.html'">Insertion Sorting</a></button>
+                <button class="favorite styled" type="button">Stack</button>
+                <button class="favorite styled" type="button">Q</button>
+            </ul>
+        </nav>
+
+        <section id="container">
+            <div class="content">
+                <article>
+                    <div class="container">
+                        <!-- 665 350 -->
+                        <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                        <a href="#" onclick="location.href='bubbleSorting.html'">
+                        <span class="hov-anim-box">
+                            <img src="../image/catPunchStop.png" alt="" class="static">
+                            <img src="../image/catPunch.gif" alt="" class="animated">
+                        </span>                          
+                        </a>
+                    </div>
+                    <div class = "container">
+                        Bubble Sorting
+                    </div>
+                </article>
+            </div>
+            <aside id="aside">
+                <!-- 665 350 -->
+                <div class="container">
+                    <!-- 665 350 -->
+                    <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                    <a href="#" onclick="location.href='selectiveSorting.html'">
+                    <span class="hov-anim-box">
+                        <img src="../image/강아지Stop.png" alt="" class="static">
+                        <img src="../image/강아지.gif" alt="" class="animated">
+                    </span>                          
+                    </a>
+                </div>
+                <div class = "container">
+                    Selective Sorting
+                </div>
+            </aside>
+            <div style="clear:both;"></div>
+        </section>
+        <section id="container">
+            <div class="content">
+                <article>
+                    <div class="container">
+                        <!-- 665 350 -->
+                        <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                        <a href="#" onclick="location.href='heapSorting.html'">
+                        <span class="hov-anim-box">
+                            <img src="../image/고양이냥냥펀치Stop.png" alt="" class="static">
+                            <img src="../image/고양이냥냥펀치.gif" alt="" class="animated">
+                        </span>
+                        </a>  
+                    </div>
+                <div class = "container">
+                    Heap Sorting
+                </div>
+                </article>
+            </div>
+            <aside id="aside">
+                <!-- 665 350 -->
+                    <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                    <a href="#" onclick="location.href='insertionSorting.html'">
+                    <span class="hov-anim-box">
+                        <img src="../image/강아지 꼬리Stop.png" alt="" class="static">
+                        <img src="../image/강아지 꼬리.gif" alt="" class="animated">
+                    </span>
+                    </a>
+                    <div class = "container">
+                        Insertion Sorting
+                    </div>
+            </aside>
+            <div style="clear:both;"></div>
+        </section>
+
+        <footer id="footer">
+            Professor in charge: Professor Lim Sun-young<br>
+            Manufacturer: Park Yong-bin, Kim Jun-seok, Ahn Hyo-joon<br>
+            Dream Dream Design Purpose: Web Visually Showing Algorithms<br>
+            April 24th is Yongbin's birthday<br>
+            April 24th, Ahn Hyo-joon's written test<br>
+        </footer>
+    </div>
+</body>
+
+</html>

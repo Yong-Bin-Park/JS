@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script src="./Main.js"></script> -->
+    <title>삽입정렬</title>
+
+    <!-- 각 요소들을 구분할 수 있게 CSS를 적용 -->
+    <style>
+        div#wrap {
+            width: auto;
+            margin: 0 auto;
+            background: #ddd;
+        }
+
+        header#header {
+            background: rgb(188, 185, 230);
+        }
+
+        nav#nav {
+            background: #dfd;
+        }
+
+        section#container {
+            background: #ddf;
+            height: calc(100vh - 230px)
+        }
+
+        section#container2 {
+            background: #a9a9a9;
+        }
+
+        div.content {
+            background: #eee;
+        }
+
+        aside#aside {
+            background: #fef;
+        }
+
+        footer#footer {
+            background: #ffe;
+            width: calc(100% - 20px);
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            clear: both;
+        }
+
+        div#warp,
+        header#header,
+        nav#nav,
+        section#container,
+        div.content,
+        aside#aside,
+        /* footer부분 글씨 여백 */
+        footer#footer {
+            padding: 10px;
+        }
+
+        nav#nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        */ nav#nav ul li {
+            background: #eee;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        div.content {
+            width: 30%;
+            height: 40vh;
+            float: left;
+        }
+
+        aside#aside {
+            width: 67.5%;
+            height: 49%;
+            float: right;
+        }
+        
+
+        /* ---------------------------- */
+
+
+        section#container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        @media screen and (max-width: 910px) {
+            div#wrap {
+                width: calc(100% - 20px);
+            }
+
+            div.content {
+                width: calc(100% - 20px - 240px - 20px);
+            }
+
+            aside#aside {
+                width: 220px;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+
+            div.content,
+            aside#aside {
+
+                width: calc(100% - 20px);
+                float: none;
+            }
+        }
+
+        .hov-anim-box .animated {
+            display: none
+        }
+
+        .hov-anim-box:hover .animated {
+            display: inline
+        }
+
+        .hov-anim-box:hover .static {
+            display: none
+        }
+        .article1{
+            height: 100%;
+        }
+        #a{
+            height: 40%;
+            width: 30%;
+            background-color:#fef;
+            float: left;
+         }
+
+         #b{
+             height: 40%;
+             width: 70%;
+             background-color: #dfd;
+             float: left;
+         }
+         #c{
+             width: 100%;
+             height: 60%;
+             background-color: #ffe;
+
+             display: table;
+         }
+
+         .c1{
+             text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+         }
+
+         #text1{
+                font-size: 40px;
+         }
+         #text2{
+                font-size: 50px;
+         }
+         #text3{
+                font-size: 60px;
+         }
+         #text4{
+                font-size: 70px;
+         }
+         #text5{
+                font-size: 80px;
+         }
+         #text6{
+                font-size: 90px;
+         }
+         #text7{
+                font-size: 100px;
+         }
+         #text8{
+                font-size: 110px;
+         }
+         #text9{
+                font-size: 120px;
+         }
+         #text10{
+                font-size: 130px;
+         }
+
+
+
+    </style>
+</head>
+
+<body bgcolor="SKYBLUE">
+    <div id="wrap">
+        <header id="header">
+            <h3>삽입정렬&nbsp;
+                <select id="language" onchange="location.href=this.value">
+                    <option value="../kor/Main.html" selected>한글</option>
+                    <option value="../eng/Main.html">English</option>
+                    <option value="../jp/Main.html">日本語</option>
+                    <option value="../ch/Main.html">中文</option>
+                </select>
+            </h3>
+        </header>
+
+        <section id="container">
+            <article class="article1">
+                <div id = "c" >
+                    <div class = "c1" >
+                        <div id = "text1" style="display:inline">
+                            
+                        </div>
+                        <div id = "text2" style="display:inline">
+                            
+                        </div>
+                        <div id = "text3" style="display:inline">
+                            
+                        </div>
+                        <div id = "text4" style="display:inline">
+                            
+                        </div>
+                        <div id = "text5" style="display:inline">
+                            
+                        </div>
+                        <div id = "text6" style="display:inline">
+                            
+                        </div>
+                        <div id = "text7" style="display:inline">
+                            
+                        </div>
+                        <div id = "text8" style="display:inline">
+                            
+                        </div>
+                        <div id = "text9" style="display:inline">
+                            
+                        </div>
+                        <div id = "text10" style="display:inline">
+                            
+                        </div>
+                    </div>
+                
+                    <!-- 665 350 -->
+                    <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                    <!-- <a href="#" onclick="location.href='bubbleSorting.html'">
+                        <span class="hov-anim-box">
+                            <img src="../image/catPunchStop.png" alt="" class="static">
+                            <img src="../image/catPunch.gif" alt="" class="animated">
+                        </span>
+                    </a> -->
+                </div>
+            <!-- </article>
+            <article class="article1">
+                -->
+                
+                   <div id = "a">
+                        <br><br>
+                        <button class="favorite styled" type="button" id = "btn1">생성</button><br><br><br>
+                        <button class="favorite styled" type="button" id = "btn2">다음</button><br><br><br>
+                        <button class="favorite styled" type="button" id = "btn3">이전</button><br><br><br>
+                        <button class="favorite styled" type="button" id = "btn4">설명</button><br><br><br>
+                    
+                    </div>
+                        <div id="b">
+                        가나다라마
+                        </div>
+            </article>
+            <div style="clear:both;"></div>
+        </section>
+        <footer id="footer">
+            담당 교수님 : 임선영 교수님<br>
+            제작자 : 박용빈 김준석 안효준<br>
+            꿈 드림 설계 목적 : 알고리즘을 시각적으로 보여주는 웹<br>
+            4월 24일 용빈이 생일<br>
+            4월 24일 안효준 기사 필기시험<br>
+        </footer>
+    </div>
+
+    <script src="Main.js"></script>
+</body>
+
+</html>
