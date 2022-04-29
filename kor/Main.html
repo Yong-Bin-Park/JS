@@ -10,14 +10,14 @@
 
     <!-- 각 요소들을 구분할 수 있게 CSS를 적용 -->
     <style>
-        div#wrap { width: 1500px; margin:0 auto; background:#ddd; }
-        header#header { background:rgb(188, 185, 230); }
-        nav#nav { background:#dfd; }    
-        section#container { background:#ddf; }
+        div#wrap { width: 100%; background:#ffffff; }
+        header#header { background:rgb(255, 255, 255); color: #000000; border-bottom: solid 3px black;}
+        nav#nav { background:rgb(255, 255, 255); color: #000000;  }    
+        section#container { background:#ffffff; }
         section#container2 {background: #a9a9a9;}
         div.content { background:#eee; }
         aside#aside { background:#fef; }
-        footer#footer { background:#ffe; }
+        footer#footer { background:rgb(240, 239, 239); }
        
         div#warp, header#header, nav#nav,
         section#container, div.content, aside#aside,
@@ -52,7 +52,7 @@
         }
     </style>
 </head>
-<body bgcolor="SKYBLUE">
+<body>
     <div id="wrap">
         <header id="header">
             <h1>고리고리알고리</h1>
@@ -147,12 +147,46 @@
             <div style="clear:both;"></div>
         </section>
 
+        <section id="container">
+            <div class="content">
+                <article>
+                    <div class="container">
+                        <!-- 665 350 -->
+                        <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                        <a href="#" onclick="location.href='heapSorting.html'">
+                        <span class="hov-anim-box">
+                            <img src="" alt="" class="static">
+                            <img src="" alt="" class="animated">
+                        </span>
+                        </a>  
+                    </div>
+                <div class = "container">
+                    스택
+                </div>
+                </article>
+            </div>
+            <aside id="aside">
+                <!-- 665 350 -->
+                    <!-- <img src="catPunchStop.png" alt = "cat" data-animated="catPunch.gif" data-static="catPunchStop.png" class = "catPunch"> -->
+                    <a href="#" onclick="location.href='insertionSorting.html'">
+                    <span class="hov-anim-box">
+                        <img src="" alt="" class="static">
+                        <img src="" alt="" class="animated">
+                    </span>
+                    </a>
+                    <div class = "container">
+                        큐
+                    </div>
+            </aside>
+            <div style="clear:both;"></div>
+        </section>
+
         <footer id="footer">
             담당 교수님 : 임선영 교수님<br>
             제작자 : 박용빈 김준석 안효준<br>
             꿈 드림 설계 목적 : 알고리즘을 시각적으로 보여주는 웹<br>
-            4월 24일 용빈이 생일<br>
-            4월 24일 안효준 기사 필기시험<br>
+            5월 7일 용빈이 기사 실기시험<br>
+            4월 24일 안효준 기사 필기 개같이 합격 (항상 아쉬움)<br>
         </footer>
     </div>
 </body>
