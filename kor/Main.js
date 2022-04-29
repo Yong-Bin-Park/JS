@@ -13,7 +13,7 @@ function shuffle(array) {
 
 // 랜덤값 
 var notSortArr = [];
-// 랜덤값 정렬
+// 랜덤값 절렬
 var sortArr = [];
 // 자신의 폰트 size 기억 및 무작위로 섞인 배열
 var classArr = [];
@@ -137,17 +137,55 @@ $(document).ready(function () {
 
         shuffle(classArr);
         
-        for (var i = 0; i < 10; i++) {
-            // $(str1[i]).html(classArr[i].num + "  ");
-            var element = document.getElementById("text" + (i + 1));
-            // console.log(element);
-            element.setAttribute('id',classArr[i].sizeText);
-            $(str1[i]).html(classArr[i].num + "  ");
-            // console.log(element);
-            // element.setAttribute(classArr[i].sizeText);
-            // console.log(element);
+        var element = [];
+        for(var i = 0; i < 10; i++){
+            element[i] = document.getElementById("text" + (i +1));
+        }
+        for(var i = 0; i < 10; i++){
+            element[i].innerHTML = classArr[i].num + " ";
+            element[i].id = classArr[i].sizeText;
         }
 
+        // var element1 = document.getElementById("text1");
+        // var element2 = document.getElementById("text2");
+        // var element3 = document.getElementById("text3");
+        // var element4 = document.getElementById("text4");
+        // var element5 = document.getElementById("text5");
+        // var element6 = document.getElementById("text6");
+        // var element7 = document.getElementById("text7");
+        // var element8 = document.getElementById("text8");
+        // var element9 = document.getElementById("text9");
+        // var element10 = document.getElementById("text10");
+
+        // element1.innerHTML = classArr[0].num + " ";
+        // element1.id=classArr[0].sizeText;
+
+        // element2.innerHTML = classArr[1].num + " ";
+        // element2.id=classArr[1].sizeText;
+
+        // element3.innerHTML = classArr[2].num + " ";
+        // element3.id=classArr[2].sizeText;
+
+        // element4.innerHTML = classArr[3].num + " ";
+        // element4.id=classArr[3].sizeText;
+
+        // element5.innerHTML = classArr[4].num + " ";
+        // element5.id=classArr[4].sizeText;
+
+        // element6.innerHTML = classArr[5].num + " ";
+        // element6.id=classArr[5].sizeText;
+
+        // element7.innerHTML = classArr[6].num + " ";
+        // element7.id=classArr[6].sizeText;
+
+        // element8.innerHTML = classArr[7].num + " ";
+        // element8.id=classArr[7].sizeText;
+
+        // element9.innerHTML = classArr[8].num + " ";
+        // element9.id=classArr[8].sizeText;
+
+        // element10.innerHTML = classArr[9].num + " ";
+        // element10.id=classArr[9].sizeText;
     });
 });
 
@@ -166,8 +204,7 @@ $(document).ready(function () {
             return a - b;
         });
         for (var i = 0; i < 10; i++) {
-            $(str1[i]).html(sortArr[i] + "  ");
+            $(str[i]).html(sortArr[i] + "  ");
         }
-        console.log(sortArr);
     });
 });
